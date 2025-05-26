@@ -13,33 +13,38 @@ const Index = () => {
   return (
     <div className="min-h-screen bg-white">
       {/* Hero Section */}
-      <section className="relative bg-gradient-to-br from-slate-900 via-slate-800 to-orange-900 text-white min-h-screen flex items-center">
-        <div className="absolute inset-0 bg-black/20"></div>
+      <section className="relative bg-gradient-to-br from-slate-900 via-purple-900 to-orange-900 text-white min-h-screen flex items-center overflow-hidden">
+        <div className="absolute inset-0 bg-black/30"></div>
+        <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1534438327276-14e5300c3a48?ixlib=rb-4.0.3')] bg-cover bg-center opacity-20"></div>
         <div className="container mx-auto px-6 relative z-10">
-          <div className="max-w-4xl">
-            <h1 className="text-6xl font-bold mb-6 leading-tight">
-              Преврати свое тело в
-              <span className="text-orange-500"> произведение искусства</span>
+          <div className="max-w-4xl animate-fade-in">
+            <h1 className="text-7xl font-bold mb-6 leading-tight">
+              Твое тело — это
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-orange-600">
+                {" "}
+                произведение искусства
+              </span>
             </h1>
-            <p className="text-xl mb-8 text-gray-200 max-w-2xl">
-              Современный фитнес-клуб с персональным подходом. Достигай
-              результата быстрее с профессиональными тренерами.
+            <p className="text-2xl mb-8 text-gray-200 max-w-3xl leading-relaxed">
+              Преврати каждую тренировку в шаг к совершенству. Современное
+              оборудование, профессиональные тренеры и атмосфера успеха ждут
+              тебя.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
               <Button
                 size="lg"
-                className="bg-orange-500 hover:bg-orange-600 text-white px-8 py-6 text-lg"
+                className="bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white px-10 py-8 text-xl font-semibold shadow-2xl shadow-orange-500/25 transform hover:scale-105 transition-all duration-200"
               >
-                <Icon name="Zap" className="mr-2" />
-                Пробная тренировка бесплатно
+                <Icon name="Zap" className="mr-3" size={24} />
+                Первая тренировка БЕСПЛАТНО
               </Button>
               <Button
                 variant="outline"
                 size="lg"
-                className="border-white text-white hover:bg-white hover:text-slate-900 px-8 py-6 text-lg"
+                className="border-2 border-white/80 text-white hover:bg-white hover:text-slate-900 px-10 py-8 text-xl backdrop-blur-sm transform hover:scale-105 transition-all duration-200"
               >
-                <Icon name="Play" className="mr-2" />
-                Смотреть видео
+                <Icon name="Play" className="mr-3" size={24} />
+                Виртуальный тур
               </Button>
             </div>
           </div>
@@ -47,51 +52,59 @@ const Index = () => {
       </section>
 
       {/* Services Section */}
-      <section className="py-20 bg-gray-50">
+      <section className="py-24 bg-gray-50">
         <div className="container mx-auto px-6">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold mb-4 text-slate-900">
-              Наши направления
+          <div className="text-center mb-20">
+            <h2 className="text-5xl font-bold mb-6 text-slate-900">
+              Направления тренировок
             </h2>
-            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-              Выбери программу, которая подходит именно тебе
+            <p className="text-2xl text-gray-600 max-w-3xl mx-auto">
+              От силовых до кардио — найди свой идеальный путь к результату
             </p>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-8">
-            <Card className="text-center hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
-              <CardHeader>
-                <div className="w-16 h-16 bg-orange-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <Icon name="Dumbbell" size={32} className="text-orange-500" />
+          <div className="grid md:grid-cols-3 gap-10">
+            <Card className="group text-center hover:shadow-2xl transition-all duration-500 hover:-translate-y-4 border-0 bg-gradient-to-br from-white to-gray-50">
+              <CardHeader className="pb-8">
+                <div className="w-20 h-20 bg-gradient-to-br from-orange-400 to-orange-600 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300 shadow-lg">
+                  <Icon name="Dumbbell" size={40} className="text-white" />
                 </div>
-                <CardTitle className="text-2xl">Силовые тренировки</CardTitle>
-                <CardDescription className="text-lg">
-                  Персональные и групповые занятия с профессиональным
-                  оборудованием
+                <CardTitle className="text-3xl mb-4 text-slate-900">
+                  Силовые тренировки
+                </CardTitle>
+                <CardDescription className="text-lg text-gray-600 leading-relaxed">
+                  Построй мускулатуру мечты с современным оборудованием и
+                  индивидуальным подходом от профессионалов
                 </CardDescription>
               </CardHeader>
             </Card>
 
-            <Card className="text-center hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
-              <CardHeader>
-                <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <Icon name="Heart" size={32} className="text-blue-500" />
+            <Card className="group text-center hover:shadow-2xl transition-all duration-500 hover:-translate-y-4 border-0 bg-gradient-to-br from-white to-gray-50">
+              <CardHeader className="pb-8">
+                <div className="w-20 h-20 bg-gradient-to-br from-blue-400 to-blue-600 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300 shadow-lg">
+                  <Icon name="Heart" size={40} className="text-white" />
                 </div>
-                <CardTitle className="text-2xl">Кардио зона</CardTitle>
-                <CardDescription className="text-lg">
-                  Современные беговые дорожки, велотренажеры и эллипсоиды
+                <CardTitle className="text-3xl mb-4 text-slate-900">
+                  Кардио зона
+                </CardTitle>
+                <CardDescription className="text-lg text-gray-600 leading-relaxed">
+                  Сжигай калории эффективно на премиальных тренажерах с
+                  интерактивными программами
                 </CardDescription>
               </CardHeader>
             </Card>
 
-            <Card className="text-center hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
-              <CardHeader>
-                <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <Icon name="Users" size={32} className="text-green-500" />
+            <Card className="group text-center hover:shadow-2xl transition-all duration-500 hover:-translate-y-4 border-0 bg-gradient-to-br from-white to-gray-50">
+              <CardHeader className="pb-8">
+                <div className="w-20 h-20 bg-gradient-to-br from-green-400 to-green-600 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300 shadow-lg">
+                  <Icon name="Users" size={40} className="text-white" />
                 </div>
-                <CardTitle className="text-2xl">Групповые занятия</CardTitle>
-                <CardDescription className="text-lg">
-                  Йога, пилатес, зумба, функциональный тренинг и многое другое
+                <CardTitle className="text-3xl mb-4 text-slate-900">
+                  Групповые занятия
+                </CardTitle>
+                <CardDescription className="text-lg text-gray-600 leading-relaxed">
+                  Заряжайся энергией в команде единомышленников: йога, пилатес,
+                  функциональный тренинг
                 </CardDescription>
               </CardHeader>
             </Card>
